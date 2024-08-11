@@ -1,11 +1,11 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
 const blogPostSchema = new Schema({
-    title: string,
-    description: string,
-    image: string
+    title: String,
+    description: String,
+    image: String,
 });
 
-const blogPostModel = model('BlogPost', blogPostSchema);
+const blogPostModel = models.BlogPost || model('BlogPost', blogPostSchema);
 
 export default blogPostModel;
